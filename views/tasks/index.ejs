@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Tasks | APEX</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-content">
+      <h1 href="tasks-title">APEX</h1>
+      </div>
+           <span class="nav-username">Welcome, <%= user.username %></span>
+           <a href="/auth/logout" class="btn-secondery" style="margin-left: 1rem;">Logout</a>
+    </div>
+  </div>
+  </nav>
+  <main class="tasks-container">
+    <div class="tasks-header">
+      <h1 class="task-title">APEX</h1>
+
+    </div>
+  </main>
+          
+      
+      <div class="nav-links">
+        <span style="color: var(--secondary);">Welcome, <%= user.username %></span>
+        <a href="/auth/logout" class="btn btn-secondery">Logout</a>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tasks-header">
+      <a href="/tasks/new" class="btn btn-primary">+ Add New Task</a>
+      
+      
+    
+    <% if (todos && todos.length > 0) { %>
+      <div class="task-list">
+        <% todos.forEach(todo => {%>
+          <div class="task-ltem">
+            <div class="task-content">
+              <h3 class="task-title"><%= todo.title%></h3>
+              <span class="priority-badge priority-<%= todo.priority.toLowerCace()%>">
+                <%= todo.priority %> priority
+
+              </span>
+              </div>
+              <div class="task-action">
+                <a href="/tasks/<%= todo._id %>/edit" class="edit-btn">Edit</a>
+                <form action="/tasks/<%= todo._id %>?_method=DELETE" method="POST" style="display: inline;">
+                  <button type="submit" class="btn btn-danger" onclick="return confirm('Delete this task?')">Delete</button>
+                  </form>
+                  </div>
+                  </div>
+                  <% }) %>
+                </div>
+                <% } else { %>
+                  <div class="empty-state">
+                    <h3>No tasks yet</h3>
+                    <p>Get started by creating your first task!</p>
+                    <a href="/tasks/new" class="btn btn-primary" style="margin-top: 1rem;">+ Add New task</a>
+                  </div>
+                  <% } %>
+                </main>
+              </body>
+              </html>
+
+
+              
+
+
+
+
+
+
+              

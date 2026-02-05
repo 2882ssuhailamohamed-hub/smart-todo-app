@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || 'APEX - Task Manager' %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <% if (user) { %>>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="/tasks" class="logo">APEX</a>
+            <div class="nav-links">
+                <span>
+                    Welcome, <%= username%></span>
+                    <a href="/auth/logout" class="bnt btn-secondery">logout</a>
+            </div>
+        </div>
+    </nav>
+<% } %>
+<div class="container">
+    <% if (messages && messages.success) { %>
+        <div class="flash-message flash-success"><%= messages.success %> </div>
+        <% } %>
+        <% if (messages && messages.error) { %>
+            <div class="flash-message flash-error"><%= messages.error %></div>
+            <% } %>
+            <%- body %>
+            
+</div>
+
+        
+        
+
+</body>
+</html>

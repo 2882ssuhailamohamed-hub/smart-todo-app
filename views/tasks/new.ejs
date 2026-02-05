@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Task | APEX</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1 href="tasks-title">APEX</h1>
+        </div> 
+        <span class="color: var(nav-username">Welcome, <%=user.username %></span>
+                <a href="/auth/logout" class="btn btn-secondery" style="margin-left: 1rem;">Logout</a>
+            </div>
+        </div>
+    </nav> 
+    <main class="from-page">
+            <div class="from-header">
+                <h1 class="form-main-title">New Task</h1>
+
+            </div> <div class="task-form">
+                <form action="/tasks" method="POST">
+                    <div class="from-group">
+                        <label class="form-label" for="title">Task Title</label>
+                        <input type="text" id="title" name="title" class="from-control" placeholder="Enter task title" required>
+
+                    </div>
+                    <div class="from-group">
+                        <label class="form-label" for="description">Description</label>
+                        <textarea id="description" name="description" class="form-input" rows="4" placeholder="Enter task description"></textarea>
+
+                    </div>
+                    <div class="from-group">
+                        <label class="form-label" for="dueDate">Due Date</label>
+                        <input type="date" id="dueDate" name="dueDate" class="form-input">
+
+                    </div> 
+                    <div class="from-group">
+                        <label class="form-label" for="priority">Priority</label>
+                        <select id="priority" name="priority" class="select-input">
+                            <option value="High"> High</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="Low">Low</option>
+
+                        </select>
+</div>
+<div class="form-actions">
+    <a href="/tasks" class="cancel-btn">Cancel</a>
+    <button type="submit" class="submit-btn">Create Task</button>
+
+</div>
+
+
+
+
+                </form>
+                </div>
+                </main>
+                </body>
+                </html>
+                
+            
